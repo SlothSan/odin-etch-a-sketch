@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#grid-container {
+    border: black 1px solid;
+    display: grid;
+    grid-auto-rows: auto;
+    grid-auto-columns: auto;
+}
+
+#page {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gridRow {
+    padding: 0;
+    margin: 0;
+    height: 20px;
+}
+
+.gridCol {
+    box-sizing: border-box;
+    display: inline-block;
+    min-width: 20px;
+    min-height: 20px;
+}
