@@ -22,20 +22,8 @@
 
 .gridRow {
     height: 750px;
-    /*border-left: black 1px solid;
-    border-right: black 1px solid;*/
-
 }
 
-/*
-.gridRow:first-of-type {
-    border-top: black 1px solid;
-}
-
-.gridRow:last-of-type {
-    border-bottom: black 1px solid; 
-}
-*/
 .gridCol {
     box-sizing: border-box;
     outline: grey 1px solid;
