@@ -2,7 +2,7 @@
 const grid = document.getElementById(`grid-container`);
 const widthGrid = grid.offsetWidth;
 const heightGrid = grid.offsetHeight;
-let size = 40;
+let size = 50;
 
 //Function to create rows. 
 function createGridRow (size) {
