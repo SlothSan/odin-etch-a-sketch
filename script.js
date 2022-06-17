@@ -3,6 +3,7 @@ const grid = document.getElementById(`grid-container`);
 const widthGrid = grid.offsetWidth;
 const heightGrid = grid.offsetHeight;
 let size = 16;
+let outline = true;
 
 //Function to create rows. 
 function createGridRow (size) {
@@ -60,6 +61,17 @@ function resetGrid () {
     };
 };
 
+//Remove outline on grid 
+function removeOutline (outline) {
+    document.querySelectorAll('.gridCol').forEach((item) => {
+        if (outline === true) {
+            item.style.outline = `none`;
+        } 
+        if (outline === false) {
+            item.style.outline = `grey 1px solid`;
+        }
+       });
+}
 
 //Add Eventlisteners to all Cells for mouseleave event.
 function cellEventListener () {
@@ -98,8 +110,21 @@ function buttonEventListeners () {
      if (button.id === `btn-clear`) {
         button.addEventListener(`click`, event => {
             clearGrid();
-        })
-     }});
+        });
+     }
+     if (button.id === `btn-outline-clear`) {
+        button.addEventListener(`click`, event => {
+            removeOutline(outline);
+            if (outline === true) {
+                outline = false;
+            } else if (outline === false) {
+                outline = true;
+            }
+            return outline;
+        });
+     }
+    
+    });
 };
 
 
