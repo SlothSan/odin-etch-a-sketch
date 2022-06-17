@@ -11,13 +11,23 @@
     justify-content: center;
 }
 
+#settings-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 900px;
+    width: 300px;
+    margin-right: 200px;
+    border: black 1px solid;
+}
+
 #etch-outline {
     display: flex;
     align-items: center;
     justify-content: center;
     box-sizing: content-box;
-    width: 700px;
-    height: 700px;
+    width: 900px;
+    height: 900px;
     border: 40px red solid;
     border-radius: 20px;
 }
@@ -27,24 +37,27 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 700px;
-    height: 700px;
+    width: 900px;
+    height: 900px;
     cursor: crosshair;
     margin: 0;
 }
 
-#page {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 .gridRow {
-    height: 700px;
+    height: 900px;
 }
 
 .gridCol {
     box-sizing: border-box;
     outline: grey 1px solid;
+}
+
+
+.black {
+    background: black;
+}
+
+button {
+    cursor: pointer;
 }

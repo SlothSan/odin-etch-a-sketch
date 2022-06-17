@@ -2,7 +2,7 @@
 const grid = document.getElementById(`grid-container`);
 const widthGrid = grid.offsetWidth;
 const heightGrid = grid.offsetHeight;
-let size = 50;
+let size = 16;
 
 //Function to create rows. 
 function createGridRow (size) {
@@ -30,7 +30,7 @@ function createGrid (size) {
 }
 
 //Resize cols and rows function
-function resize () {
+function resize (size) {
     let rows = document.getElementsByClassName(`gridRow`);
     let cells = document.getElementsByClassName(`gridCol`);
     let cellSizeNum = Math.floor(widthGrid / size);
@@ -47,13 +47,46 @@ function resize () {
 };
 
 
-//Eventlisteners on Divs
+//Add Eventlisteners to all Cells for mouseleave event.
 
-grid.addEventListener(`click`, event => {
-    console.log("Hello World");
-});
+function cellEventListener () {
+    
+    document.querySelectorAll('.gridCol').forEach((item) => {
+        item.addEventListener(`mouseover`, (event) => {
+            item.classList.add(`black`)
+        });
+    });
+};
 
+
+//Button eventlisteners 
+
+function buttonEventListeners () {
+    const buttons = document.querySelectorAll(`.button`);
+    buttons.forEach((button) => {
+        if(button.id = `btn-grid`) {
+            button.addEventListener(`click`, event =>{
+                size = prompt(`Enter the size of the grid.`);
+                createGrid(size);
+                resize(size);
+                cellEventListener();
+            });
+        };
+    });
+};
 
 
 createGrid(size);
-resize();
+resize(size);
+cellEventListener();
+buttonEventListeners();
+
+//Eventlisteners on Divs
+//EVents to use mouseleave
+/*
+document.querySelectorAll('.gridCol').forEach((item) => {
+    item.addEventListener(`mouseover`, (event) => {
+        console.log(`Hallo World`);
+    })
+})
+*/
