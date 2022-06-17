@@ -46,6 +46,12 @@ function resize (size) {
     };
 };
 
+//Clear Grid - add the other classes once created. 
+function clearGrid () {
+    document.querySelectorAll('.gridCol').forEach((item) => {
+        item.classList.remove(`black`)
+       });
+};
 
 //Reset Grid
 function resetGrid () {
@@ -56,11 +62,10 @@ function resetGrid () {
 
 
 //Add Eventlisteners to all Cells for mouseleave event.
-
 function cellEventListener () {
     
     document.querySelectorAll('.gridCol').forEach((item) => {
-        item.addEventListener(`mouseover`, (event) => {
+        item.addEventListener(`mouseenter`, (event) => {
             item.classList.add(`black`)
         });
     });
@@ -68,12 +73,11 @@ function cellEventListener () {
 
 
 //Button eventlisteners 
-
 function buttonEventListeners () {
     const buttons = document.querySelectorAll(`.button`);
     buttons.forEach((button) => {
 
-        if(button.id = `btn-grid`) {
+        if(button.id === `btn-grid`) {
             button.addEventListener(`click`, event =>{
                 size = prompt(`Enter the size of the grid! (max 100)`);
                 let reg = /^\d+$/;
@@ -91,7 +95,11 @@ function buttonEventListeners () {
                 };
             });
         };
-    });
+     if (button.id === `btn-clear`) {
+        button.addEventListener(`click`, event => {
+            clearGrid();
+        })
+     }});
 };
 
 
@@ -100,12 +108,4 @@ resize(size);
 cellEventListener();
 buttonEventListeners();
 
-//Eventlisteners on Divs
-//EVents to use mouseleave
-/*
-document.querySelectorAll('.gridCol').forEach((item) => {
-    item.addEventListener(`mouseover`, (event) => {
-        console.log(`Hallo World`);
-    })
-})
-*/
+

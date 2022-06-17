@@ -30,6 +30,9 @@
     height: 900px;
     border: 40px red solid;
     border-radius: 20px;
+    margin-left: -2px;
+    margin-right: -2px;
+    margin-bottom: -2px;
 }
 
 #grid-container {
