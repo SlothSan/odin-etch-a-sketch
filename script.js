@@ -8,6 +8,7 @@ let mouseDown = false;
 let eraser = false;
 let color = ``;
 let rainbow = false;
+let shader = false;
 
 //Function to create rows. 
 function createGridRow (size) {
@@ -86,10 +87,6 @@ function removeOutline (outline) {
 
 //Add Eventlisteners to all Cells for mouseleave event.
 function cellEventListener (color, rainbow) {
-    /*if(color === "" || color === undefined) {
-        color = `black`;
-    }*/
-
     if (rainbow === true) {
     document.addEventListener(`mousemove`, function(e) {
         if(mouseDown) {
@@ -111,21 +108,12 @@ function cellEventListener (color, rainbow) {
             if(mouseDown) {
                 if (e.target.className === `gridCol`) {
                     e.target.style.backgroundColor = `black`;
-                }
+
+                };
             }})
     }
     };
     
-    /*else {
-        document.addEventListener(`mousemove`, function(e) {
-            if(mouseDown) {
-                if (e.target.className === `gridCol`) {
-                    e.target.style.backgroundColor = `black`;
-                }
-            } 
-    }},; */
-
-
 //Button eventlisteners 
 function buttonEventListeners () {
     const buttons = document.querySelectorAll(`.button`);
@@ -200,7 +188,6 @@ function buttonEventListeners () {
 function createRandomColor () {
     color = Math.floor(Math.random()*16777215).toString(16);
     color = `#` + color;
-    console.log(color);
     return color;
 }
 
