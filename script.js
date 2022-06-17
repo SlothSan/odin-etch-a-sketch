@@ -47,6 +47,14 @@ function resize (size) {
 };
 
 
+//Reset Grid
+function resetGrid () {
+    while (grid.lastElementChild) {
+        grid.removeChild(grid.lastElementChild);
+    };
+};
+
+
 //Add Eventlisteners to all Cells for mouseleave event.
 
 function cellEventListener () {
@@ -64,12 +72,23 @@ function cellEventListener () {
 function buttonEventListeners () {
     const buttons = document.querySelectorAll(`.button`);
     buttons.forEach((button) => {
+
         if(button.id = `btn-grid`) {
             button.addEventListener(`click`, event =>{
-                size = prompt(`Enter the size of the grid.`);
-                createGrid(size);
-                resize(size);
-                cellEventListener();
+                size = prompt(`Enter the size of the grid! (max 100)`);
+                let reg = /^\d+$/;
+                if (size === null || size === `` || !reg.test(size) || size > 100 || size <= 0) {
+                        size = 16;
+                        resetGrid();
+                        createGrid(size);
+                        resize(size);
+                        cellEventListener();
+                    }else {
+                        resetGrid();
+                        createGrid(size);
+                        resize(size);
+                        cellEventListener();
+                };
             });
         };
     });
