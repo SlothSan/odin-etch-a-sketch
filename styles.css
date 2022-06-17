@@ -8,17 +8,19 @@
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    user-select: none;
 }
 
 #settings-bar {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-self: left;
     height: 900px;
     width: 300px;
-    margin-right: 200px;
-    border: black 1px solid;
+    margin-left: 20%;
+    margin-right: 10px;
+    border: black 3px solid;
 }
 
 #etch-outline {
@@ -30,6 +32,7 @@
     height: 900px;
     border: 40px red solid;
     border-radius: 20px;
+    margin-top: -2px;
     margin-left: -2px;
     margin-right: -2px;
     margin-bottom: -2px;
@@ -43,7 +46,6 @@
     width: 900px;
     height: 900px;
     cursor: crosshair;
-    margin: 0;
 }
 
 

@@ -77,7 +77,7 @@ function removeOutline (outline) {
 function cellEventListener () {
     
     document.querySelectorAll('.gridCol').forEach((item) => {
-        item.addEventListener(`mouseenter`, (event) => {
+        item.addEventListener(`mouseover`, (event) => {
             item.classList.add(`black`)
         });
     });
