@@ -103,7 +103,7 @@ function cellEventListener (color, rainbow) {
                     e.target.style.backgroundColor = `#fff`;
                 }
     }});
-    } if (rainbow === false) {
+    } if (rainbow === false && color !==`#fff`) {
         document.addEventListener(`mousemove`, function(e) {
             if(mouseDown) {
                 if (e.target.className === `gridCol`) {
