@@ -4,7 +4,9 @@ const widthGrid = grid.offsetWidth;
 const heightGrid = grid.offsetHeight;
 let size = 16;
 let outline = true;
-let mousedown = false;
+let mouseDown = false;
+let eraser = false;
+let color = ``;
 
 //Function to create rows. 
 function createGridRow (size) {
@@ -51,7 +53,7 @@ function resize (size) {
 //Clear Grid - add the other classes once created. 
 function clearGrid () {
     document.querySelectorAll('.gridCol').forEach((item) => {
-        item.classList.remove(`black`)
+        item.style.backgroundColor = `#FFF`;
        });
 };
 
@@ -75,12 +77,16 @@ function removeOutline (outline) {
 }
 
 //Add Eventlisteners to all Cells for mouseleave event.
-function cellEventListener () {
-    
-    document.querySelectorAll('.gridCol').forEach((item) => {
-        item.addEventListener(`mouseover`, (event) => {
-            item.classList.add(`black`)
-        });
+function cellEventListener (color) {
+    if(color === "" || color === undefined) {
+        color = `black`;
+    }
+    document.addEventListener(`mousemove`, function(e) {
+        if(mouseDown) {
+            if (e.target.className === `gridCol`) {
+                e.target.style.backgroundColor = color;
+            }
+        }
     });
 };
 
@@ -124,6 +130,21 @@ function buttonEventListeners () {
             return outline;
         });
      }
+
+     if (button.id === `btn-eraser`) {
+        button.addEventListener(`click`, event => {
+        if(eraser === false) {  
+            color = `#fff`;
+            eraser = true;
+            document.getElementById(`eraser-mode`).innerHTML = "ON!"
+        } else if (eraser === true) {
+            eraser = false;
+            color = `black`
+            document.getElementById(`eraser-mode`).innerHTML = "OFF!"
+        }
+        cellEventListener(color);
+        });
+     }
     
     });
 };
@@ -131,7 +152,16 @@ function buttonEventListeners () {
 
 createGrid(size);
 resize(size);
-cellEventListener();
+cellEventListener(color);
 buttonEventListeners();
+
+
+window.addEventListener(`mousedown`, () => {
+    mouseDown = true;
+});
+
+window.addEventListener(`mouseup`, () => {
+    mouseDown = false;
+});
 
 

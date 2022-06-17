@@ -51,11 +51,12 @@
 
 .gridRow {
     height: 900px;
+    outline: none;
 }
 
 .gridCol {
     box-sizing: border-box;
-    outline: grey 1px solid;
+    outline: grey 0.5px solid;
 }
 
 
