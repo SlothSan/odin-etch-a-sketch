@@ -4,6 +4,7 @@ const widthGrid = grid.offsetWidth;
 const heightGrid = grid.offsetHeight;
 let size = 16;
 let outline = true;
+let mousedown = false;
 
 //Function to create rows. 
 function createGridRow (size) {
