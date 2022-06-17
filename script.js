@@ -31,6 +31,13 @@ function createGridColumns (size) {
 function createGrid (size) {
     createGridRow(size);
     createGridColumns(size);
+    //this fixes the weird outlines when erasting. 
+    document.querySelectorAll('.gridCol').forEach((item) => {
+        item.style.backgroundColor = `#FFF`;
+       });
+    document.querySelectorAll('.gridRow').forEach((item) => {
+        item.style.backgroundColor = `#FFF`;
+       });
 }
 
 //Resize cols and rows function

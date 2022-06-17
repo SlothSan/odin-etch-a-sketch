@@ -28,8 +28,8 @@
     align-items: center;
     justify-content: center;
     box-sizing: content-box;
-    width: 900px;
-    height: 900px;
+    width: 1000px;
+    height: 1000px;
     border: 40px red solid;
     border-radius: 20px;
     margin-top: -2px;
@@ -43,20 +43,20 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 900px;
-    height: 900px;
+    width: 1000px;
+    height: 1000px;
     cursor: crosshair;
 }
 
 
 .gridRow {
-    height: 900px;
+    height: 1000px;
     outline: none;
 }
 
 .gridCol {
-    box-sizing: border-box;
-    outline: grey 0.5px solid;
+    outline: grey 1px solid;
+
 }
 
 
