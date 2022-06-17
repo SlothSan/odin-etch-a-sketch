@@ -7,6 +7,7 @@ let outline = true;
 let mouseDown = false;
 let eraser = false;
 let color = ``;
+let rainbow = false;
 
 //Function to create rows. 
 function createGridRow (size) {
@@ -84,18 +85,45 @@ function removeOutline (outline) {
 }
 
 //Add Eventlisteners to all Cells for mouseleave event.
-function cellEventListener (color) {
-    if(color === "" || color === undefined) {
+function cellEventListener (color, rainbow) {
+    /*if(color === "" || color === undefined) {
         color = `black`;
-    }
+    }*/
+
+    if (rainbow === true) {
     document.addEventListener(`mousemove`, function(e) {
         if(mouseDown) {
             if (e.target.className === `gridCol`) {
+                let color = createRandomColor();
                 e.target.style.backgroundColor = color;
             }
         }
     });
-};
+    } if (color === `#fff`) {
+        document.addEventListener(`mousemove`, function(e) {
+            if(mouseDown) {
+                if (e.target.className === `gridCol`) {
+                    e.target.style.backgroundColor = `#fff`;
+                }
+    }});
+    } if (rainbow === false) {
+        document.addEventListener(`mousemove`, function(e) {
+            if(mouseDown) {
+                if (e.target.className === `gridCol`) {
+                    e.target.style.backgroundColor = `black`;
+                }
+            }})
+    }
+    };
+    
+    /*else {
+        document.addEventListener(`mousemove`, function(e) {
+            if(mouseDown) {
+                if (e.target.className === `gridCol`) {
+                    e.target.style.backgroundColor = `black`;
+                }
+            } 
+    }},; */
 
 
 //Button eventlisteners 
@@ -149,17 +177,37 @@ function buttonEventListeners () {
             color = `black`
             document.getElementById(`eraser-mode`).innerHTML = "OFF!"
         }
-        cellEventListener(color);
+        cellEventListener(color, rainbow);
+        });
+     }
+
+     if (button.id === `btn-rainbow`) {
+        button.addEventListener(`click`, event => {
+        if(rainbow === false) {  
+            rainbow = true;
+            document.getElementById(`rainbow-mode`).innerHTML = "ON!"
+        } else if (rainbow === true) {
+            rainbow = false;
+            document.getElementById(`rainbow-mode`).innerHTML = "OFF!"
+        }
+        cellEventListener(color, rainbow);
         });
      }
     
     });
 };
 
+function createRandomColor () {
+    color = Math.floor(Math.random()*16777215).toString(16);
+    color = `#` + color;
+    console.log(color);
+    return color;
+}
+
 
 createGrid(size);
 resize(size);
-cellEventListener(color);
+cellEventListener(color, rainbow);
 buttonEventListeners();
 
 
