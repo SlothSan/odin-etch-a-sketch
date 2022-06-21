@@ -53,6 +53,32 @@ function randomColors() {
     }
 }
 
+//Function Pencil Shader 
+function pencilShader() {
+    let nodeList = document.querySelectorAll(`.grid-square`);
+    for (let i = 0, nodeLength = nodeList.length; i < nodeLength; i++) {
+        nodeList[i].addEventListener (
+            "mouseover", function(e) {
+                if (e.buttons == 1) {
+                    let countValue = parseFloat(this.getAttribute("counter"));
+                    if (countValue == 0) {
+                        this.style.backgroundColor = `rgb(00, 00, 00, 0.1)`;
+                        let newCount = parseFloat(countValue) + 0.1;
+                        this.setAttribute("counter", newCount);
+                    }
+                    else if (countValue < 1) {
+                        this.style.backgroundColor = `rgb(00, 00, 00, ${parseFloat(countValue)})`;
+                        let newCount = parseFloat(countValue) + 0.1;
+                        this.setAttribute("counter", newCount);
+                    }
+                    else {
+                        this.style.backgroundColor = `rgb(00, 00, 00, 1)`;
+                    }
+                }
+            });
+    }
+}
+
 
 console.log(container);
 
@@ -60,4 +86,4 @@ console.log(container);
 generateGrid(16);
 
 //Set Initial Color
-colorChangeEventListener("rgb(0,0,0");
+colorChangeEventListener("rgb(00, 00, 00");
