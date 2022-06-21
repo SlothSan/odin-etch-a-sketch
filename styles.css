@@ -121,12 +121,13 @@ button:hover {
     display: flex;
     text-align: center;
     align-self: center;
-    padding-top: 15vh;
+    padding-top: 12.5vh;
     font-size: 24px;
 }
 
 a {
     padding-left: 10px;
+    padding-bottom: 25px;
     color: orange;
     text-decoration: none;
     transition: all .7s ease-in-out;
