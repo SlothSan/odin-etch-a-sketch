@@ -36,6 +36,24 @@ function colorChangeEventListener(color) {
     document.getElementById("color-picker").value = color;
 }
 
+//Random Color Change on mouseover
+function randomColors() {
+    let nodeList = document.querySelectorAll(`.grid-square`);
+    for (let i = 0, nodeLength = nodeList.length; i < nodeLength; i++) {
+        let x = Math.floor(Math.random() * Math.floor(256));
+        let y = Math.floor(Math.random() * Math.floor(256));
+        let z = Math.floor(Math.random() * Math.floor(256));
+        nodeList[i].setAttribute("counter", 0);
+        nodeList[i].addEventListener( 
+            "mouseover", function(e) {
+                if(e.buttons == 1) {
+                    this.style.backgroundColor = `rgb(${x}, ${y}, ${z})`;
+                }
+            });
+    }
+}
+
+
 console.log(container);
 
 //Set Intial Grid
