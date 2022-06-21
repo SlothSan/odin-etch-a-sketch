@@ -116,3 +116,21 @@ button:hover {
 .no-border {
     border: none;
 }
+
+#footer-container {
+    display: flex;
+    text-align: center;
+    align-self: center;
+    padding-top: 15vh;
+    font-size: 24px;
+}
+
+a {
+    padding-left: 10px;
+    color: orange;
+    text-decoration: none;
+}
+
+.fa-spin-hover:hover {
+    animation: fa-spin 2s infinite linear;
+}
