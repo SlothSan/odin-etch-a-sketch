@@ -96,8 +96,23 @@ function clearGrid() {
     }
 }
 
+//Update display to match the Grid Slider Value 
+function updateValue(value) {
+    document.getElementById(`slider-display`).textContent = value + ` x ` + value;
+}
+
+//Function to toggle the gridlines
+function toggleGridlines() {
+    let nodeList = document.querySelectorAll(`.grid-square`);
+    for (let i = 0, nodeLength = nodeList.length; i < nodeLength; i++) {
+        nodeList[i].classList.toggle("no-border");
+    }
+}
+
 //Set Intial Grid
 generateGrid(16);
+updateValue(16);
+
 
 //Set Initial Color
 colorChangeEventListener("rgb(00, 00, 00");

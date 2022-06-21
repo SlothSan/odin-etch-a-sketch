@@ -6,7 +6,7 @@ html, body {
     height: 100%;
     margin: 0;
     background-color: rgb(5, 5, 65);
-    color: lightskyblue;
+    color: orange;
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
 }
@@ -22,17 +22,18 @@ span {
 
 button {
     background-color: rgb(5,5,65);
-    color: lightskyblue;
+    color: orange;
     border-radius: 5px;
-    border: 1px solid lightskyblue;
+    border: 1px solid orange;
     height: 35px;
     width: 150px;
     outline: none;
     font-family: 'Roboto', sans-serif;
+    cursor: pointer;
 }
 
 button:hover {
-    background-color: lightskyblue;
+    background-color: orange;
     color: rgb(5,5,65);
     border: 1px solid rgb(5,5,65);
 }
@@ -67,7 +68,7 @@ button:hover {
     max-height: 500px;
     align-self: center;
     background-color: white;
-    border: 10px lightskyblue solid;
+    border: 10px orange solid;
     user-select: none;
 }
 
@@ -83,9 +84,7 @@ button:hover {
     flex: 1;
 }
 
-.grid-square {
-    border: 1px solid rgb(225,225,225);
-}
+
 
 #controls-container {
     display: flex;
@@ -108,4 +107,12 @@ button:hover {
 #slider-display {
     display: flex;
     justify-content: center;
+}
+
+.grid-square {
+    border: 1px solid rgb(225,225,225);
+}
+
+.no-border {
+    border: none;
 }
