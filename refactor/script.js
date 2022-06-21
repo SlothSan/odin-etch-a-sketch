@@ -20,5 +20,26 @@ function generateGrid(x) {
     }
 }
 
+//colorChange on mouseover
+function colorChangeEventListener(color) {
+    let nodeList = document.querySelectorAll(".grid-square");
+    for (let i = 0, nodeLength = nodeList.length; i < nodeLength; i++) {
+        nodeList[i].setAttribute("counter", 0);
+        nodeList[i].addEventListener(
+            `mouseover`, function(e) {
+                if(e.buttons == 1) {
+                    this.style.backgroundColor = color;
+                }
+            });
+    }
+
+    document.getElementById("color-picker").value = color;
+}
+
 console.log(container);
-generateGrid(100);
+
+//Set Intial Grid
+generateGrid(16);
+
+//Set Initial Color
+colorChangeEventListener("rgb(0,0,0");
