@@ -4,29 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etch-A-Sketch</title>
+    <title>Odin Project - Etch-A-Sketch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    
-    <div id="page">
-        <div id="settings-bar">
-            <h1 id="title">Etch A Sketch</h1>
-            <p>Hover your mouse through the etch a sketch to draw!</p>
-            <p>Use the settings below to change grid-size / reset / color of the fill.</p>
-            <button id="btn-grid" class="button" type="button">Change Grid Size</button>
-            <button id="btn-clear" class="button" type="button">Clear Grid</button>
-            <button id="btn-outline-clear" class="button" type="toggle">Remove Outline</button>
-            <button id="btn-eraser" class="button" type="toggle">Eraser Mode</button>
-            <p id="eraser-mode">OFF!</p>
-            <button id="btn-rainbow" class="button" type="toggle">Rainbow Mode</button>
-            <p id="rainbow-mode">OFF!</p>
+    <div id="content-wrapper">
+        <div id="title-container">
+            <h1>ETCH A SKETCH!</h1>
+            <span>Click and Drag to draw!</span>
         </div>
-        <div id="etch-outline">
-        <div id="grid-container"></div> 
-        </div> 
+    <div id="body-container">
+        <div id="grid-container"></div>
+        <div id="controls-container">
+            <b>Controls</b>
+            <div id="black-container">
+                <button id="black" onclick="colorChangeEventListener(`black`)">Black</button>
+            </div>
+            <div id="eraser-container">
+                <button id="erase" onclick="colorChangeEventListener(`white`)">Eraser</button>
+            </div>
+            <div id="color-picker-container">
+                <label for="color-picker">Choose Color</label>
+                <input type="color" id="color-picker" onchange="colorChangeEventListener(this.value)">
+            </div>
+            <div id="random-container">
+                <button id="random" onclick="randomColors()">Random</button>
+            </div>
+            <div id="pencil-container">
+                <button id="pencil-shader" onclick="pencilShader()">Pencil Shader</button>
+            </div>
+            <div id="slide-container">
+                Grid Size
+                <input type="range" min="2" max="100" value="16" id="grid-slider" class="slider" onchange="generateGrid(this.value); clearGrid()" onmousemove="updateValue(this.value)">
+                <div id="slider-display"></div>
+            </div>
+            <div id="toggle-grid-container">
+                <button id="toggle-grid" onclick="toggleGridlines()">Toggle Gridlines</button>
+            </div>
+            <div id="clear-grid-container">
+                <button id="clear-grid" onclick="clearGrid()">Clear Grid</button>
+            </div>
+        </div>
     </div>
-
+    </div>
+    
     <script src="./script.js"></script>
 </body>
 </html>

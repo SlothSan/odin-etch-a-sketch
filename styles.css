@@ -1,68 +1,118 @@
 * {
     box-sizing: border-box;
-    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: rgb(5, 5, 65);
+    color: orange;
+    font-size: 16px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+h1 {
+    display: flex;
+}
+
+span {
+    display: flex;
+    padding-bottom: 25px;
+}
+
+button {
+    background-color: rgb(5,5,65);
+    color: orange;
+    border-radius: 5px;
+    border: 1px solid orange;
+    height: 50px;
+    width: 150px;
+    outline: none;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: orange;
+    color: rgb(5,5,65);
+    border: 1px solid rgb(5,5,65);
+}
+
+#content-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     margin: 0;
 }
 
-#page {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    user-select: none;
-}
-
-#settings-bar {
+#title-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-self: left;
-    height: 900px;
-    width: 300px;
-    margin-left: 20%;
-    margin-right: 10px;
-    border: black 3px solid;
 }
 
-#etch-outline {
+#body-container {
     display: flex;
-    align-items: center;
     justify-content: center;
-    box-sizing: content-box;
-    width: 1000px;
-    height: 1000px;
-    border: 40px red solid;
-    border-radius: 20px;
-    margin-top: -2px;
-    margin-left: -2px;
-    margin-right: -2px;
-    margin-bottom: -2px;
+    height: 70vh;
+    gap: 100px;
 }
 
 #grid-container {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    width: 35vw;
+    height: 70vh;
+    max-width: 750px;
+    max-height: 750px;
+    align-self: center;
+    background-color: white;
+    border: 10px orange solid;
+    user-select: none;
+}
+
+#grid-container > div {
+    flex: 1;
+}
+
+.grid-row {
+    display: flex;
+}
+
+.grid-row > div {
+    flex: 1;
+}
+
+
+
+#controls-container {
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    height: 70vh;
+    max-height: 750px;
+    justify-content: space-evenly;
     align-items: center;
-    width: 1000px;
-    height: 1000px;
-    cursor: crosshair;
 }
 
-
-.gridRow {
-    height: 1000px;
-    outline: none;
+#slide-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
 }
 
-.gridCol {
-    outline: grey 1px solid;
+#slider-display {
+    display: flex;
+    justify-content: center;
 }
 
-
-.black {
-    background: black;
+.grid-square {
+    border: 1px solid rgb(225,225,225);
 }
 
-button {
-    cursor: pointer;
+.no-border {
+    border: none;
 }

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-A-Sketch</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    
+    <div id="page">
+        <div id="settings-bar">
+            <h1 id="title">Etch A Sketch</h1>
+            <p>Hover your mouse through the etch a sketch to draw!</p>
+            <p>Use the settings below to change grid-size / reset / color of the fill.</p>
+            <button id="btn-grid" class="button" type="button">Change Grid Size</button>
+            <button id="btn-clear" class="button" type="button">Clear Grid</button>
+            <button id="btn-outline-clear" class="button" type="toggle">Remove Outline</button>
+            <button id="btn-eraser" class="button" type="toggle">Eraser Mode</button>
+            <p id="eraser-mode">OFF!</p>
+            <button id="btn-rainbow" class="button" type="toggle">Rainbow Mode</button>
+            <p id="rainbow-mode">OFF!</p>
+        </div>
+        <div id="etch-outline">
+        <div id="grid-container"></div> 
+        </div> 
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
