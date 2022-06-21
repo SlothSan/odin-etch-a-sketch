@@ -79,8 +79,22 @@ function pencilShader() {
     }
 }
 
-
-console.log(container);
+//Function Clear Grid
+function clearGrid() {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+    let slideValue = document.getElementById(`grid-slider`).value;
+    generateGrid(slideValue);
+    let colorValue = document.getElementById(`color-picker`).value;
+    if (colorValue != `rgb(00, 00, 00)`) {
+        colorChangeEventListener(colorValue);
+    }
+    else {
+        colorChangeEventListener(`rgb(00, 00, 00)`);
+        document.getElementById(`color-picker`).value = `rgb(00, 00, 00)`;
+    }
+}
 
 //Set Intial Grid
 generateGrid(16);
