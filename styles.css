@@ -11,15 +11,6 @@ html, body {
     font-family: 'Press Start 2P', cursive;
 }
 
-h1 {
-    display: flex;
-}
-
-span {
-    display: flex;
-    padding-bottom: 25px;
-}
-
 button {
     background-color: rgb(5,5,65);
     color: orange;
@@ -38,25 +29,26 @@ button:hover {
     border: 1px solid rgb(5,5,65);
 }
 
-#content-wrapper {
+.content-wrapper {
     display: flex;
     flex-direction: column;
     height: 100%;
     margin: 0;
 }
 
-#title-container {
+.title-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 25px;
 }
 
-#body-container {
+.body-container {
     display: flex;
     justify-content: center;
     height: 70vh;
-    gap: 100px;
+    gap: 10px;
 }
 
 #grid-container {
@@ -72,7 +64,7 @@ button:hover {
     user-select: none;
 }
 
-#grid-container > div {
+#grid-container div {
     flex: 1;
 }
 
@@ -84,9 +76,7 @@ button:hover {
     flex: 1;
 }
 
-
-
-#controls-container {
+.controls-container {
     display: flex;
     align-self: center;
     flex-direction: column;
@@ -96,17 +86,12 @@ button:hover {
     align-items: center;
 }
 
-#slide-container {
+.slide-container {
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
-}
-
-#slider-display {
-    display: flex;
-    justify-content: center;
 }
 
 .grid-square {
@@ -117,23 +102,33 @@ button:hover {
     border: none;
 }
 
-#footer-container {
+.footer-container {
     display: flex;
-    text-align: center;
     align-self: center;
+    align-items: center;
+    justify-content: center;
     padding-top: 12.5vh;
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 
 a {
-    padding-left: 10px;
-    padding-bottom: 25px;
     color: orange;
     text-decoration: none;
     transition: all .7s ease-in-out;
 }
 
+i {
+    font-size: 3rem;
+}
+
 .fa-spin-hover:hover {
-    animation: fa-spin 0.7s ease-in-out;
-    transform: scale(1.2);
+    animation: fa-spin 0.4s ease-in-out;
+}
+
+.responsive-container {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    
 }
