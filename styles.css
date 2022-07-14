@@ -54,8 +54,8 @@ button:hover {
 #grid-container {
     display: flex;
     flex-direction: column;
-    width: 35vw;
-    height: 70vh;
+    height: 750px;
+    width: 750px;
     max-width: 750px;
     max-height: 750px;
     align-self: center;
@@ -129,6 +129,29 @@ i {
     display: none;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 970px) {
     
+    .content-wrapper {
+        display: none;
+    }
+
+    .responsive-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        z-index: 99;
+        padding: -10% -5%;
+        border: 5px dashed orange;
+    }
+
+    .responsive-text-container {
+        margin: 50px 10px;
+    }
+
+    .responsive-sub-text {
+        margin-top: 20px;
+    }
 }
