@@ -4,57 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Odin Project - Etch-A-Sketch</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gsta tic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
     <script src="https://kit.fontawesome.com/3824660a61.js" crossorigin="anonymous"></script>
+    <title>Odin Project - Etch-A-Sketch</title>
 </head>
 <body>
-    <div id="content-wrapper">
-        <div id="title-container">
+    <div class="responsive-container">
+        <div class="responsive-text-container">
+            <h2>Oops - this doesn't work on Mobile :(</h2>
+            <p class="responsive-sub-text">Please try the Etch-A-Sketch on a Desktop!</p>
+        </div>
+    </div>
+    <div class="content-wrapper">
+        <div class="title-container">
             <h1>ETCH A SKETCH!</h1>
             <span>Click and Drag to draw!</span>
         </div>
-    <div id="body-container">
+    <div class="body-container">
         <div id="grid-container"></div>
-        <div id="controls-container">
+        <div class="controls-container">
             <b>Controls</b>
-            <div id="black-container">
-                <button id="black" onclick="colorChangeEventListener(`black`)">Black</button>
-            </div>
-            <div id="eraser-container">
-                <button id="erase" onclick="colorChangeEventListener(`white`)">Eraser</button>
-            </div>
-            <div id="color-picker-container">
-                <label for="color-picker">Choose Color</label>
-                <input type="color" id="color-picker" onchange="colorChangeEventListener(this.value)">
-            </div>
-            <div id="random-container">
-                <button id="random" onclick="randomColors()">Random</button>
-            </div>
-            <div id="pencil-container">
-                <button id="pencil-shader" onclick="pencilShader()">Pencil Shader</button>
-            </div>
-            <div id="slide-container">
+            <button onclick="colorChangeEventListener(`black`)">Black</button>
+            <button onclick="colorChangeEventListener(`white`)">Eraser</button>
+            <label for="color-picker">Choose Color</label>
+            <input type="color" id="color-picker" onchange="colorChangeEventListener(this.value)">
+            <button onclick="randomColors()">Random</button>
+            <button id="pencil-shader" onclick="pencilShader()">Pencil Shader</button>
+            <div class="slide-container">
                 Grid Size
                 <input type="range" min="2" max="100" value="16" id="grid-slider" class="slider" onchange="generateGrid(this.value); clearGrid()" onmousemove="updateValue(this.value)">
                 <div id="slider-display"></div>
             </div>
-            <div id="toggle-grid-container">
-                <button id="toggle-grid" onclick="toggleGridlines()">Toggle Gridlines</button>
-            </div>
-            <div id="clear-grid-container">
-                <button id="clear-grid" onclick="clearGrid()">Clear Grid</button>
-            </div>
+            <button onclick="toggleGridlines()">Toggle Gridlines</button>
+            <button onclick="clearGrid()">Clear Grid</button>
         </div>
     </div>
-    <div id="footer-container">
-        Created by Mike Oram 2022 <a target="_blank" href="https://github.com/SlothSan"><i class="fa-brands fa-github fa-xl fa-spin-hover"></i></a>
+    <div class="footer-container">
+        <a target="_blank" href="https://github.com/SlothSan">
+            Created by Mike Oram 2022 
+            <i class="fa-brands fa-github fa-spin-hover"></i>
+        </a>
     </div>
     </div>
-    
-    <script src="./script.js"></script>
+<script src="./script.js"></script>
 </body>
 </html>
