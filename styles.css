@@ -41,7 +41,8 @@ button:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 25px;
+    font-size: 1rem;
+    padding-bottom: 70px;
 }
 
 .body-container {
@@ -56,8 +57,6 @@ button:hover {
     flex-direction: column;
     height: 750px;
     width: 750px;
-    max-width: 750px;
-    max-height: 750px;
     align-self: center;
     background-color: white;
     border: 10px orange solid;
@@ -107,7 +106,7 @@ button:hover {
     align-self: center;
     align-items: center;
     justify-content: center;
-    padding-top: 12.5vh;
+    padding-top: 50px;
     font-size: 1.5rem;
 }
 
